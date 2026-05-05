@@ -1,0 +1,739 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Custom CSS Variables for Theme */
+:root {
+  /* Light mode colors */
+  --color-background: #ffffff;
+  --color-foreground: #0a0a0a;
+
+  /* Dark mode colors */
+  &.dark {
+    --color-background: #0a0a0a;
+    --color-foreground: #fafafa;
+  }
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.45 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.558 0.169 142.89);
+  --chart-2: oklch(0.664 0.122 169.38);
+  --chart-3: oklch(0.334 0.08 156.98);
+  --chart-4: oklch(0.569 0.119 154.95);
+  --chart-5: oklch(0.496 0.09 126.19);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+  --brand: oklch(0.558 0.169 142.89);
+  --brand-accent: oklch(0.664 0.122 169.38);
+  --brand-foreground: oklch(1 0 0);
+  --brand-warm: oklch(0.496 0.09 126.19);
+  --destructive-foreground: oklch(1 0 0);
+  --info: oklch(0.48 0.072 208);
+  --success: oklch(0.664 0.122 169.38);
+  --success-foreground: oklch(0.334 0.08 156.98);
+  --success-muted: oklch(0.95 0.035 155);
+  --warning: oklch(0.769 0.188 70.08);
+}
+
+/* Custom utility: dot pattern background */
+@utility bg-dot-pattern {
+  background-image: radial-gradient(circle, currentColor 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  opacity: 0.08;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast / forced colors support */
+@media (forced-colors: active) {
+  *:focus-visible {
+    outline: 3px solid CanvasText !important;
+    outline-offset: 2px;
+  }
+
+  [data-slot='dialog-overlay'] {
+    background-color: Canvas !important;
+    opacity: 0.8 !important;
+  }
+}
+
+@theme inline {
+  --font-sans: 'Figtree', system-ui, -apple-system, sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-brand: var(--brand);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-warm: var(--brand-warm);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-info: var(--info);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-success-muted: var(--success-muted);
+  --color-warning: var(--warning);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.49 0.235 27.325);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.62 0.14 143);
+  --chart-1: oklch(0.62 0.14 143);
+  --chart-2: oklch(0.72 0.11 169);
+  --chart-3: oklch(0.55 0.08 200);
+  --chart-4: oklch(0.65 0.11 155);
+  --chart-5: oklch(0.58 0.1 127);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.62 0.14 143);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+  --success-foreground: oklch(0.78 0.12 168);
+  --success-muted: oklch(0.28 0.055 165 / 30%);
+}
+
+/* ── Solar System: starfield twinkle ── */
+@keyframes star-twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ── Solar System: planet glow pulse ── */
+@keyframes planet-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 12px 4px var(--planet-glow);
+  }
+  50% {
+    box-shadow: 0 0 20px 8px var(--planet-glow);
+  }
+}
+
+/* ── Solar System: sun corona rays rotation ── */
+@keyframes sun-corona-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── Solar System: sun ambient glow ── */
+@keyframes sun-glow {
+  0%,
+  100% {
+    filter: blur(16px);
+    opacity: 0.4;
+  }
+  50% {
+    filter: blur(24px);
+    opacity: 0.6;
+  }
+}
+
+/* ── Shiki dual-theme support ── */
+.shiki-wrapper .shiki,
+.shiki-wrapper .shiki span {
+  color: var(--shiki-light);
+  background-color: var(--shiki-light-bg);
+}
+
+.dark .shiki-wrapper .shiki,
+.dark .shiki-wrapper .shiki span {
+  color: var(--shiki-dark);
+  background-color: var(--shiki-dark-bg);
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  * {
+    @apply border-border outline-ring;
+  }
+  body {
+    @apply bg-background font-sans text-foreground;
+  }
+}
+
+@utility focus-ring {
+  outline: none;
+
+  &:focus-visible {
+    box-shadow:
+      0 0 0 2px var(--color-background),
+      0 0 0 4px var(--color-ring);
+  }
+}
+
+/* ── Logo: Animated spinning border ── */
+.logo-border-spin {
+  background: conic-gradient(
+    from var(--ring-angle, 0deg),
+    var(--brand),
+    var(--brand-accent),
+    var(--brand-warm),
+    var(--brand)
+  );
+  animation: spin-ring 4s linear infinite;
+}
+
+/* ── Photo Circle: Animated Ring ── */
+@property --ring-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.photo-ring {
+  position: relative;
+  padding: 6px;
+  background: conic-gradient(
+    from var(--ring-angle, 0deg),
+    var(--brand),
+    var(--brand-accent),
+    var(--brand-warm),
+    var(--warning),
+    var(--brand)
+  );
+  animation: spin-ring 4s linear infinite;
+}
+
+.photo-ring::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  background: conic-gradient(
+    from var(--ring-angle, 0deg),
+    var(--brand),
+    var(--brand-accent),
+    var(--brand-warm),
+    var(--warning),
+    var(--brand)
+  );
+  filter: blur(16px);
+  opacity: 0.5;
+  z-index: -1;
+  animation: glow-pulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes spin-ring {
+  to {
+    --ring-angle: 360deg;
+  }
+}
+
+@keyframes glow-pulse {
+  0% {
+    opacity: 0.3;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 0.6;
+    filter: blur(20px);
+  }
+}
+
+/* ── Photo Circle: Hover effects ── */
+@media (hover: hover) {
+  .photo-circle:hover .photo-ring {
+    animation:
+      spin-ring 4s linear infinite,
+      shake-pulse 2s ease-in-out infinite;
+  }
+
+  .photo-circle:hover .photo-ring::after {
+    opacity: 0.8;
+    filter: blur(24px);
+  }
+
+  .photo-circle:hover .sparkle {
+    animation-duration: 1s !important;
+  }
+}
+
+.photo-circle.photo-tapped .photo-ring {
+  animation:
+    spin-ring 4s linear infinite,
+    shake-pulse 2s ease-in-out infinite;
+}
+
+.photo-circle.photo-tapped .photo-ring::after {
+  opacity: 0.8;
+  filter: blur(24px);
+}
+
+.photo-circle.photo-tapped .sparkle {
+  animation-duration: 1s !important;
+}
+
+@keyframes shake-pulse {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  15% {
+    transform: scale(1.02) rotate(-1.5deg);
+  }
+  30% {
+    transform: scale(0.99) rotate(1deg);
+  }
+  45% {
+    transform: scale(1.03) rotate(-1deg);
+  }
+  60% {
+    transform: scale(0.98) rotate(1.5deg);
+  }
+  75% {
+    transform: scale(1.02) rotate(-0.5deg);
+  }
+}
+
+/* ── Photo Circle: Shine sweep ── */
+.photo-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.3) 45%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.3) 55%,
+    transparent 60%
+  );
+  transform: rotate(25deg);
+  animation: shine-sweep 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shine-sweep {
+  0%,
+  70%,
+  100% {
+    left: -60%;
+  }
+  80% {
+    left: 120%;
+  }
+}
+
+/* ── Photo Circle: Sparkle particles ── */
+.sparkle-container {
+  position: absolute;
+  inset: -20px;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--brand-foreground);
+  border-radius: 50%;
+  animation: sparkle-float 3s ease-in-out infinite;
+  box-shadow:
+    0 0 6px 2px oklch(from var(--brand) l c h / 0.6),
+    0 0 12px 4px oklch(from var(--brand-accent) l c h / 0.3);
+}
+
+/* Large sparkles */
+.sparkle:nth-child(1) {
+  top: 2%;
+  left: 12%;
+  animation-delay: 0s;
+  animation-duration: 2.5s;
+  width: 8px;
+  height: 8px;
+}
+.sparkle:nth-child(2) {
+  top: 12%;
+  right: 3%;
+  animation-delay: 0.8s;
+  animation-duration: 3.2s;
+  width: 7px;
+  height: 7px;
+}
+.sparkle:nth-child(3) {
+  bottom: 18%;
+  left: 1%;
+  animation-delay: 1.5s;
+  animation-duration: 2.8s;
+  width: 9px;
+  height: 9px;
+}
+.sparkle:nth-child(4) {
+  bottom: 5%;
+  right: 12%;
+  animation-delay: 0.3s;
+  animation-duration: 3.5s;
+  width: 7px;
+  height: 7px;
+}
+
+/* Medium sparkles */
+.sparkle:nth-child(5) {
+  top: 42%;
+  left: -3%;
+  animation-delay: 2s;
+  animation-duration: 2.2s;
+  width: 5px;
+  height: 5px;
+}
+.sparkle:nth-child(6) {
+  top: 38%;
+  right: -2%;
+  animation-delay: 1.2s;
+  animation-duration: 3s;
+  width: 6px;
+  height: 6px;
+}
+.sparkle:nth-child(7) {
+  top: 8%;
+  left: 38%;
+  animation-delay: 0.5s;
+  animation-duration: 2.7s;
+  width: 5px;
+  height: 5px;
+}
+.sparkle:nth-child(8) {
+  bottom: 12%;
+  right: 30%;
+  animation-delay: 1.8s;
+  animation-duration: 3.3s;
+  width: 5px;
+  height: 5px;
+}
+.sparkle:nth-child(9) {
+  top: 25%;
+  left: -1%;
+  animation-delay: 2.5s;
+  animation-duration: 2.4s;
+  width: 6px;
+  height: 6px;
+}
+.sparkle:nth-child(10) {
+  bottom: 35%;
+  right: -1%;
+  animation-delay: 0.6s;
+  animation-duration: 2.9s;
+  width: 5px;
+  height: 5px;
+}
+
+/* Small sparkles */
+.sparkle:nth-child(11) {
+  top: 0%;
+  left: 30%;
+  animation-delay: 1s;
+  animation-duration: 2s;
+  width: 3px;
+  height: 3px;
+}
+.sparkle:nth-child(12) {
+  top: 20%;
+  right: 15%;
+  animation-delay: 2.2s;
+  animation-duration: 2.6s;
+  width: 3px;
+  height: 3px;
+}
+.sparkle:nth-child(13) {
+  bottom: 2%;
+  left: 25%;
+  animation-delay: 0.4s;
+  animation-duration: 3.1s;
+  width: 4px;
+  height: 4px;
+}
+.sparkle:nth-child(14) {
+  bottom: 28%;
+  left: -2%;
+  animation-delay: 1.7s;
+  animation-duration: 2.3s;
+  width: 3px;
+  height: 3px;
+}
+.sparkle:nth-child(15) {
+  top: 55%;
+  right: -3%;
+  animation-delay: 0.9s;
+  animation-duration: 3.4s;
+  width: 4px;
+  height: 4px;
+}
+.sparkle:nth-child(16) {
+  top: -1%;
+  right: 25%;
+  animation-delay: 2.8s;
+  animation-duration: 2.1s;
+  width: 3px;
+  height: 3px;
+}
+
+@keyframes sparkle-float {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0) translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1) translateY(-8px);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(0.8) translateY(-4px);
+  }
+}
+
+/* ── Photo Circle: Image swap on hover ── */
+.photo-default {
+  display: block;
+}
+.photo-hover {
+  display: none;
+}
+
+@media (hover: hover) {
+  .photo-circle:hover .photo-default {
+    display: none;
+  }
+  .photo-circle:hover .photo-hover {
+    display: block;
+  }
+}
+
+.photo-circle.photo-tapped .photo-default {
+  display: none;
+}
+.photo-circle.photo-tapped .photo-hover {
+  display: block;
+}
+
+/* ── Achievement Gallery: gold shimmer ── */
+.achievement-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 215, 0, 0.06) 45%,
+    rgba(255, 215, 0, 0.12) 50%,
+    rgba(255, 215, 0, 0.06) 55%,
+    transparent 60%
+  );
+  animation: achievement-shine 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .achievement-shimmer::after {
+    animation: none;
+  }
+}
+
+@keyframes achievement-shine {
+  0%,
+  60%,
+  100% {
+    transform: translateX(-100%);
+  }
+  70% {
+    transform: translateX(100%);
+  }
+}
+
+/* ── Grand Finale overlay ── */
+.grand-finale-text {
+  background: linear-gradient(
+    135deg,
+    #ffd700 0%,
+    #f59e0b 25%,
+    #fbbf24 50%,
+    #ffd700 75%,
+    #f59e0b 100%
+  );
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 1)) drop-shadow(0 0 6px rgba(0, 0, 0, 0.9))
+    drop-shadow(0 0 12px rgba(0, 0, 0, 0.6));
+  animation:
+    finale-shimmer 2s linear infinite,
+    finale-pulse 1.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grand-finale-text {
+    animation: none;
+  }
+}
+
+@keyframes finale-shimmer {
+  0% {
+    background-position: 200% 200%;
+  }
+  100% {
+    background-position: -200% -200%;
+  }
+}
+
+@keyframes finale-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* ── Void Mode: Pendulum lightbulb ── */
+@keyframes void-pendulum {
+  0%,
+  100% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+}
+
+.void-pendulum-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: top center;
+  animation: void-pendulum 4s ease-in-out infinite;
+}
+
+.void-wire {
+  width: 2px;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, oklch(0.5 0 0));
+}
+
+.void-bulb {
+  filter: drop-shadow(0 0 20px oklch(0.45 0.15 85)) drop-shadow(0 0 60px oklch(0.75 0.12 85 / 0.5));
+}
+
+.void-spotlight {
+  width: 0;
+  height: 0;
+  margin-top: -150px;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-bottom: 400px solid oklch(0.85 0.15 85 / 0.14);
+  filter: blur(50px);
+}

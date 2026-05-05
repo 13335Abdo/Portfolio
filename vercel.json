@@ -1,0 +1,5 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [{"destination": "/storybook/", "source": "/storybook"}],
+  "rewrites": [{"destination": "/index.html", "source": "/(.*)" }]
+}
