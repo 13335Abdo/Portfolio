@@ -45,7 +45,7 @@ export const CaseStudySection = ({content, project}: CaseStudySectionProps) => (
             {project.company}
           </span>
         )}
-        <span className="text-sm text-muted-foreground">{project.year}</span>
+        {/* <span className="text-sm text-muted-foreground">{project.year}</span> */}
       </div>
       <p className="text-sm text-muted-foreground">{project.role}</p>
       <p className="max-w-3xl text-muted-foreground">{project.description}</p>

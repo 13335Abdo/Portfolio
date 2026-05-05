@@ -90,7 +90,10 @@ export const Work = () => {
               ) : null;
             })}
 
-            <SectionDivider label="Side Projects" />
+
+            
+
+            <SectionDivider label="Projects living" />
 
             {/* Side Projects */}
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -99,15 +102,15 @@ export const Work = () => {
               ))}
             </div>
 
-            <SectionDivider label="Take a Break" />
+            {/* <SectionDivider label="Take a Break" /> */}
 
             {/* Bug Blaster Mini-Game */}
-            <div className="mx-auto max-w-2xl space-y-3">
+            {/* <div className="mx-auto max-w-2xl space-y-3">
               <p className="text-center text-sm text-muted-foreground">
                 You made it this far - reward yourself with a quick bug hunt.
               </p>
               <BugBlaster />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

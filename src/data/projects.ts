@@ -1,9 +1,9 @@
-import {type IconDefinition} from '@fortawesome/fontawesome-svg-core';
-import {faCamera, faRocket, faShapes} from '@fortawesome/free-solid-svg-icons';
+import { type IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { faCamera, faRocket, faShapes, faShoppingCart, faUsers } from '@fortawesome/free-solid-svg-icons';
 
-import eurekaTrackerImg from '@/assets/projects/eureka-tracker.webp';
-import mandragoraManiaImg from '@/assets/projects/mandragora-mania.webp';
-import xivCompleteImg from '@/assets/projects/xiv-complete.webp';
+import eurekaTrackerImg from '@/assets/projects/freshcart.png';
+import mandragoraManiaImg from '@/assets/projects/Dashboard.png';
+import xivCompleteImg from '@/assets/projects/socialappscreen.png';
 
 export type Project = {
   company?: string;
@@ -18,7 +18,7 @@ export type Project = {
   techStack: string[];
   title: string;
   type: 'case-study' | 'side-project';
-  year: number | string;
+  year?: number | string;
 };
 
 export type ProjectLink = {
@@ -31,36 +31,42 @@ export const PROJECTS: Project[] = [
   {
     company: 'Fresh Cart',
     description:
-      'Full e-commerce experience built with React and Next.js — product browsing, cart management, checkout flow, and secure user authentication with JWT.',
-    icon: faShapes,
+      'Full e-commerce experience with 60+ products, cart management, checkout flow, and secure user authentication — built with React, Next.js, and TypeScript.',
+    icon: faShoppingCart,
     id: 'design-system-architecture',
-    role: 'Senior Frontend Engineer',
-    slug: 'design-system-architecture',
-    tags: ['design-system', 'architecture', 'leadership'],
-    techStack: ['Next.js','React', 'TypeScript', 'Tailwind CSS', 'Redux Toolkit', 'shadcn/ui'],
+    links: [
+      {
+        label: 'GitHub',
+        url: 'https://github.com/13335Abdo/FreshCart',
+      },
+    ],
+    role: 'Frontend Developer',
+    slug: 'fresh-cart',
+    tags: ['e-commerce', 'react', 'next.js'],
+    techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Redux Toolkit', 'shadcn/ui'],
     title: 'E-Commerce Platform',
     type: 'case-study',
-    year: '2024-present',
+    year: '2025',
   },
   {
-    company: 'ezCater',
+    company: 'Social App',
     description:
-      'Built a visual testing strategy recognized by Chromatic as the ideal implementation. 1,000+ stories covering components, full pages with MSW handlers, and documentation.',
-    icon: faCamera,
+      'Social feed app with post creation, likes, comments, and a follow/unfollow system — built with a reusable component architecture and global state management.',
+    icon: faUsers,
     id: 'visual-testing-strategy',
     links: [
       {
-        label: 'Chromatic Case Study',
-        url: 'https://www.chromatic.com/customers/ezcater',
+        label: 'GitHub',
+        url: 'https://github.com/13335Abdo/social-app',
       },
     ],
-    role: 'Senior Frontend Engineer',
-    slug: 'visual-testing-strategy',
-    tags: ['testing', 'engineering', 'leadership'],
-    techStack: ['Storybook', 'Chromatic', 'MSW', 'React Testing Library'],
-    title: 'Visual Testing & Storybook Strategy',
+    role: 'Frontend Developer',
+    slug: 'social-app',
+    tags: ['social', 'react', 'redux'],
+    techStack: ['React', 'Redux Toolkit', 'Tailwind CSS'],
+    title: 'Social App',
     type: 'case-study',
-    year: '2022-present',
+    year: '2025',
   },
   {
     description:
@@ -70,7 +76,7 @@ export const PROJECTS: Project[] = [
     links: [
       {
         label: 'GitHub',
-        url: 'https://github.com/noranda/norandabrown.com',
+        url: 'https://github.com/13335Abdo/Portfolio',
       },
     ],
     role: 'Designer & Developer',
@@ -82,51 +88,49 @@ export const PROJECTS: Project[] = [
     year: '2026-present',
   },
 
+
+
+
+
   // ── Side Projects ──
   {
     coverImage: eurekaTrackerImg,
     description:
-      'Real-time tracker and knowledge base for FFXIV Eureka content. Used worldwide with community-provided translations. Still active years after launch.',
+      'Full e-commerce experience with 60+ products, cart management, checkout flow, and secure user authentication — built with React, Next.js, and TypeScript.',
     id: 'eureka-tracker',
-    links: [{label: 'Live Site', url: 'https://ffxiv-eureka.com'}],
-    role: 'Creator',
-    slug: 'eureka-tracker',
-    tags: ['gaming', 'community', 'open-source'],
-    techStack: ['Ember', 'Elixir', 'WebSockets'],
-    title: 'Eureka Tracker',
+    links: [{ label: 'Live Site', url: 'https://fresh-cart-teal-zeta.vercel.app/' }],
+    role: 'Frontend Developer',
+    slug: 'fresh-cart',
+    tags: ['e-commerce', 'react', 'next.js'],
+    techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Redux Toolkit', 'shadcn/ui'],
+    title: 'Fresh Cart',
     type: 'side-project',
-    year: '2018-2026',
   },
   {
     coverImage: xivCompleteImg,
     description:
-      'Completionist tracker for FFXIV, helping players track achievements, collections, and overall game completion progress.',
+      'Social feed app with post creation, likes, comments, and a follow/unfollow system for user-to-user connections — built with a reusable component architecture.',
     id: 'xiv-complete',
-    links: [{label: 'Live Site', url: 'https://xiv-complete.com'}],
-    role: 'Creator',
-    slug: 'xiv-complete',
-    tags: ['gaming', 'full-stack'],
-    techStack: ['React', 'Ruby on Rails'],
-    title: 'XIV-Complete',
+    links: [{ label: 'Live Site', url: 'https://social-app-two-beta.vercel.app/' }],
+    role: 'Frontend Developer',
+    slug: 'social-app',
+    tags: ['social', 'react', 'redux'],
+    techStack: ['React', 'Redux Toolkit', 'Tailwind CSS'],
+    title: 'Social App',
     type: 'side-project',
-    year: '2020-2026',
   },
   {
     coverImage: mandragoraManiaImg,
     description:
-      'A strategy board game with AI-powered move analysis. Built as a platform for experimenting with game AI and modern web technologies.',
-    id: 'mandragora-mania',
-    links: [
-      {label: 'Play', url: 'https://noranda.github.io/mandragora-mania'},
-      {label: 'GitHub', url: 'https://github.com/noranda/mandragora-mania'},
-    ],
-    role: 'Creator',
-    slug: 'mandragora-mania',
-    tags: ['gaming', 'ai', 'open-source'],
-    techStack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS'],
-    title: 'Mandragora Mania',
+      'A weather dashboard built with Vanilla JS that displays real-time weather data including temperature, humidity, and forecasts for any city.',
+    id: 'Dashboard',
+    links: [{ label: 'Live Site', url: 'https://city-specs-route.vercel.app/' }],
+    role: 'Frontend Developer',
+    slug: 'weather-dashboard',
+    tags: ['dashboard', 'weather', 'vanilla-js'],
+    techStack: ['HTML', 'CSS', 'JavaScript', 'REST API'],
+    title: 'Weather Dashboard',
     type: 'side-project',
-    year: 2025,
   },
 ];
 
