@@ -28,7 +28,7 @@ export const Resume = () => {
       data-easter-egg="📄 You found the resume - where bullet points get the designer treatment"
     >
       <PageMeta
-        description="Resume of Noranda Brown. 12+ years of frontend engineering, design systems, and visual testing. Download as PDF."
+        description="Resume of Abdelrahman Rabi3. 12+ years of frontend engineering, design systems, and visual testing. Download as PDF."
         path="/resume"
         title="Resume"
       />
@@ -41,7 +41,7 @@ export const Resume = () => {
           initial="hidden"
           variants={fadeUp}
         >
-          <h1 className="font-display text-4xl sm:text-5xl">Resume</h1>
+          <h1 className="font-display text-4xl sm:text-5xl">CV</h1>
           <p className="max-w-2xl text-lg text-muted-foreground">{RESUME.summary}</p>
 
           <div className="flex flex-wrap items-center gap-3">
@@ -50,7 +50,7 @@ export const Resume = () => {
               {downloading ? 'Generating...' : 'Download PDF'}
             </Button>
 
-            <button
+            {/* <button
               aria-pressed={showReality}
               className="flex cursor-pointer items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:border-brand/30 hover:text-foreground"
               onClick={() => setShowReality(!showReality)}
@@ -61,10 +61,10 @@ export const Resume = () => {
                 icon={faWandMagicSparkles}
               />
               {showReality ? 'Reality Mode: On' : 'Reality Mode: Off'}
-            </button>
+            </button> */}
           </div>
 
-          {showReality && (
+          {/* {showReality && (
             <div
               className="flex items-start gap-2 rounded-lg border border-brand/20 bg-brand/5 px-4 py-3 text-base text-muted-foreground"
               role="note"
@@ -75,11 +75,11 @@ export const Resume = () => {
                 accurate. This version is emotionally accurate.
               </p>
             </div>
-          )}
+          )} */}
         </motion.div>
 
         {/* Experience */}
-        <motion.div
+        {/* <motion.div
           animate="visible"
           className="mb-12"
           custom={1}
@@ -99,7 +99,7 @@ export const Resume = () => {
               />
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Skills */}
         <SectionDivider label="Skills & Tools" />

@@ -42,28 +42,26 @@ export type ResumeData = {
 
 export const RESUME: ResumeData = {
   education: [
-    {
-      degree: 'MA, Computer Science',
-      endYear: 2014,
-      gpa: 3.9,
-      id: 'brandeis',
-      reality:
-        "Speedran a master's degree in one year while simultaneously working as a web developer on campus. Slept occasionally.",
-      school: 'Brandeis University',
-      startYear: 2013,
-    },
-    {
-      degree: 'BA, Geosciences (Computer Science concentration)',
-      endYear: 2012,
-      gpa: 3.7,
-      honors: 'Magna Cum Laude',
-      id: 'wellesley',
-      reality:
-        'Started as a geology major, ended up writing code. The rocks were interesting but they never threw runtime errors, which got boring.',
-      school: 'Wellesley College',
-      startYear: 2008,
-    },
-  ],
+  {
+    degree: 'BS, Computer Science',
+    endYear: 2025,
+    gpa: 3.1,
+    id: 'o6u',
+    reality:
+      'Started with algorithms and data structures, ended up falling in love with frontend. Turns out making things look good and work fast is way more fun than sorting arrays.',
+    school: 'October 6 University (O6U)',
+    startYear: 2021,
+  },
+  {
+    degree: 'Frontend Development Track',
+    endYear: 2026,
+    id: 'route',
+    reality:
+      'Intensive frontend track where I went from knowing React to building full e-commerce apps with Next.js, TypeScript, and Redux Toolkit. Shipped more code than sleep.',
+    school: 'Route Academy',
+    startYear: 2025,
+  },
+],
   experience: [
     {
       company: 'ezCater',
@@ -78,7 +76,7 @@ export const RESUME: ResumeData = {
         'Shipped new checkout workflow, app bar, and payment system on a product team',
         'Championed AI-assisted development through tech talks, documentation, and published blogs',
       ],
-      links: [{label: 'Medium Blog', url: 'https://medium.com/@noranda'}],
+      links: [{ label: 'Medium Blog', url: 'https://medium.com/@noranda' }],
       id: 'ezcater',
       reality:
         'Started a one-woman revolution against CSS-in-JS. Built a design system so good that the team they disbanded to stop me from building it got rebuilt to help me finish it. Also may have attended more Chromatic webinars than anyone outside of Chromatic.',
@@ -147,10 +145,10 @@ export const RESUME: ResumeData = {
     {
       highlighted: ['Tailwind CSS'],
       name: 'Design & Styling',
-      skills: ['CSS', 'Figma', 'Material UI', 'SCSS', 'Sketch', 'Tailwind CSS'],
+      skills: ['CSS', 'Figma', 'Material UI', 'Tailwind CSS'],
     },
     {
-      highlighted: ['Chromatic', 'Storybook'],
+      highlighted: ['Claude Code'],
       name: 'Testing & Tools',
       skills: [
         'Chromatic',
@@ -158,23 +156,20 @@ export const RESUME: ResumeData = {
         'Copilot',
         'Cursor',
         'Git',
-        'Glean',
-        'Jest',
-        'Storybook',
       ],
     },
     {
-      highlighted: ['Design Systems', 'Visual Testing'],
+      highlighted: ['Component Architecture', 'Design Systems'],
       name: 'Practices',
       skills: [
         'Accessibility',
         'Component Architecture',
         'Design Systems',
-        'UI/UX Design',
-        'Visual Testing',
+        'Responsive Design',
+        'REST API Integration',
       ],
     },
   ],
   summary:
-    '12+ years of hybrid design and engineering experience building accessible, performant web applications. I build design systems, champion visual testing, and care deeply about the developer experience.',
+    'Front-end developer with 1 year of hands-on experience building responsive web applications. I focus on clean component architecture, reusable UI, and delivering fast, accessible interfaces with React and Next.js.',
 };

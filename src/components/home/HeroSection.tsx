@@ -46,7 +46,7 @@ export const HeroSection = () => (
           className="border-transparent bg-white/20 text-white backdrop-blur-sm hover:bg-white/30"
           size="lg"
         >
-          <Link to="/resume">Download Resume</Link>
+          <Link to="/resume">Download CV</Link>
         </Button>
         <Button
           asChild

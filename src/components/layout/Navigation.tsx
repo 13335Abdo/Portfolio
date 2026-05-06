@@ -3,8 +3,7 @@ import {twJoin} from 'tailwind-merge';
 
 const NAV_LINKS = [
   {label: 'Work', to: '/work'},
-  {label: 'Components', to: '/components'},
-  {label: 'Resume', to: '/resume'},
+  {label: 'CV', to: '/resume'},
   {label: 'About', to: '/about'},
 ];
 
