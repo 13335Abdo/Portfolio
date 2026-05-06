@@ -11,12 +11,12 @@ export const About = () => (
     data-easter-egg="🪐 You found the solar system. The planets are themed, not chronological. Yes, the NASA one is real."
   >
     <PageMeta
-      description="Get to know Noranda Brown. From NASA JPL research intern to Senior Frontend Engineer — explore an interactive solar system of skills and interests."
+      description="Get to know Abdelrahman Rabi3."
       path="/about"
       title="About"
     />
     <div className="mx-auto max-w-5xl px-6 py-12">
-      <h1 className="sr-only">About Noranda Brown</h1>
+      <h1 className="sr-only">About Abdelrahman Rabi3</h1>
 
       <motion.p
         animate="visible"

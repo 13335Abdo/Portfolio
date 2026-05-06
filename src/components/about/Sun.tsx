@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {twJoin} from 'tailwind-merge';
 
-import norandaIllustration from '@/assets/noranda-brown-illustration.webp';
+import norandaIllustration from '@/assets/AbdelrahmanRabi3.png';
 import {type SunData} from '@/data/about';
 
 type SunProps = {
