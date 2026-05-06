@@ -11,7 +11,7 @@ export type TourStep = {
 export const TOUR_STEPS: TourStep[] = [
   {
     content:
-      "Welcome! I'm Noranda, and yes, I built this entire portfolio instead of updating my LinkedIn. Worth it? The jury's still out.",
+      "Welcome! I'm Abdelrahman, and yes, I built this entire portfolio instead of updating my LinkedIn. Worth it? The jury's still out.",
     position: 'bottom',
     target: 'tour-logo',
     title: 'Hey there!',

@@ -5,7 +5,7 @@ export type BugBlasterFact = {
 
 export const BUG_BLASTER_FACTS: BugBlasterFact[] = [
   {
-    fact: 'Noranda once refactored the same component 7 times. She regrets nothing.',
+    fact: 'Abdelrahman once refactored the same component 7 times. They regret nothing.',
     id: 'refactor',
   },
   {
@@ -29,11 +29,11 @@ export const BUG_BLASTER_FACTS: BugBlasterFact[] = [
     id: 'tabs',
   },
   {
-    fact: 'The CSS specificity wars of 2023 were her Vietnam.',
+    fact: 'The CSS specificity wars of 2023 were their Vietnam.',
     id: 'specificity',
   },
   {
-    fact: "Reviews her own PRs and still finds things she'd change.",
+    fact: "Reviews their own PRs and still finds things they'd change.",
     id: 'pr-review',
   },
 ];

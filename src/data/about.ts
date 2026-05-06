@@ -180,10 +180,10 @@ export const ABOUT_DATA: AboutData = {
     },
   ],
   sun: {
-    bio: "I'm Abdelruhman — a frontend developer from Cairo passionate about building fast, clean, and responsive web applications. I focus on React and Next.js, care about component architecture and reusable UI, and love turning designs into pixel-perfect interfaces. When I'm not coding, I'm learning something new or working on my next side project.",
+    bio: "I'm Abdelrahman — a frontend developer from Cairo passionate about building fast, clean, and responsive web applications. I focus on React and Next.js, care about component architecture and reusable UI, and love turning designs into pixel-perfect interfaces. When I'm not coding, I'm learning something new or working on my next side project.",
     colorToken: 'brand',
     glowColor: glowColor('brand', 0.4),
-    label: 'Abdelruhman Mohamed',
+    label: 'Abdelrahman Rabi3',
     size: 80,
   },
   tagline: 'From learning the basics to shipping full products.',

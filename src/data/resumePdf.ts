@@ -1,3 +1,5 @@
+import {SITE_CONFIG} from '@/data/siteConfig';
+
 export type ContactLink = {
   label: string;
   src: string;
@@ -10,17 +12,20 @@ export type PdfMeta = {
 };
 
 export const CONTACT_LINKS: ContactLink[] = [
-  {label: 'noranda@norandabrown.com', src: 'mailto:noranda@norandabrown.com'},
-  {label: 'norandabrown.com', src: 'https://www.norandabrown.com'},
-  {label: 'github.com/noranda', src: 'https://github.com/noranda'},
-  {label: 'linkedin.com/in/noranda', src: 'https://linkedin.com/in/noranda'},
-  {label: 'medium.com/@noranda', src: 'https://medium.com/@noranda'},
+  {label: SITE_CONFIG.email, src: `mailto:${SITE_CONFIG.email}`},
+  {label: SITE_CONFIG.baseUrl, src: SITE_CONFIG.baseUrl},
+  {label: 'github.com/13335Abdo', src: SITE_CONFIG.githubUrl},
+  {label: 'linkedin.com/in/abdelrahmanmrabie', src: SITE_CONFIG.linkedinUrl},
+  {
+    label: 'medium.com/@abdelrahmanrabi3',
+    src: 'https://medium.com/@abdelrahmanrabi3',
+  },
 ];
 
 export const PDF_META: PdfMeta = {
-  author: 'Noranda Brown',
-  fileName: 'Noranda-Brown-Resume.pdf',
-  title: 'Noranda Brown - Resume',
+  author: 'Abdelrahman Rabi3',
+  fileName: 'Abdelrahman-Rabi3-Resume.pdf',
+  title: 'Abdelrahman Rabi3 - Resume',
 };
 
 export const TLDR_ITEMS: string[] = [

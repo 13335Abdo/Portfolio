@@ -43,7 +43,7 @@ export const SolarSystem = () => {
 
   return (
     <div
-      aria-label="About Noranda Brown - solar system visualization showing life themes as planets"
+      aria-label="About Abdelrahman Rabi3 - solar system visualization showing life themes as planets"
       aria-roledescription="interactive solar system"
       className={twJoin(
         'relative mx-auto aspect-square w-full max-w-[700px] select-none',

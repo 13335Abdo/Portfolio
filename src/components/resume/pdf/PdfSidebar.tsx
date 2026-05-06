@@ -1,6 +1,6 @@
 import {Defs, Image, LinearGradient, Link, Rect, Stop, Svg, Text, View} from '@react-pdf/renderer';
 
-import norandaIllustration from '@/assets/noranda-brown-illustration.png';
+import abdelrahmanIllustration from '@/assets/AbdelrahmanRabi3.png';
 import {RESUME} from '@/data/resume';
 import {CONTACT_LINKS} from '@/data/resumePdf';
 
@@ -21,9 +21,9 @@ export const PdfSidebar = () => (
 
     <View style={s.sidebarContent}>
       {/* Illustration */}
-      <Image src={norandaIllustration} style={s.photo} />
+      <Image src={abdelrahmanIllustration} style={s.photo} />
 
-      <Text style={s.sidebarName}>Noranda Brown</Text>
+      <Text style={s.sidebarName}>Abdelrahman Rabi3</Text>
       <Text style={s.sidebarTitle}>Senior Frontend Engineer</Text>
 
       <View style={s.sidebarDivider} />

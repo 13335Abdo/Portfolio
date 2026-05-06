@@ -76,7 +76,9 @@ export const RESUME: ResumeData = {
         'Shipped new checkout workflow, app bar, and payment system on a product team',
         'Championed AI-assisted development through tech talks, documentation, and published blogs',
       ],
-      links: [{ label: 'Medium Blog', url: 'https://medium.com/@noranda' }],
+      links: [
+        {label: 'Medium Blog', url: 'https://medium.com/@abdelrahmanrabi3'},
+      ],
       id: 'ezcater',
       reality:
         'Started a one-woman revolution against CSS-in-JS. Built a design system so good that the team they disbanded to stop me from building it got rebuilt to help me finish it. Also may have attended more Chromatic webinars than anyone outside of Chromatic.',
