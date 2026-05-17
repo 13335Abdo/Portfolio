@@ -57,7 +57,7 @@ export const PROJECTS: Project[] = [
     links: [
       {
         label: 'GitHub',
-        url: 'https://github.com/13335Abdo/social-app',
+        url: 'https://github.com/13335Abdo/Connect-app',
       },
     ],
     role: 'Frontend Developer',
@@ -111,7 +111,7 @@ export const PROJECTS: Project[] = [
     description:
       'Social feed app with post creation, likes, comments, and a follow/unfollow system for user-to-user connections — built with a reusable component architecture.',
     id: 'xiv-complete',
-    links: [{ label: 'Live Site', url: 'https://social-app-two-beta.vercel.app/' }],
+    links: [{ label: 'Live Site', url: 'https://connect-app-73it.vercel.app/' }],
     role: 'Frontend Developer',
     slug: 'social-app',
     tags: ['social', 'react', 'redux'],
