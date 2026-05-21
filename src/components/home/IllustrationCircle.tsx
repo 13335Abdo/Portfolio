@@ -29,12 +29,12 @@ export const IllustrationCircle = () => {
             alt="Noranda Brown"
             className="photo-default h-[200%] w-full object-cover object-[center_-40px] sm:object-[center_-60px] md:object-[center_-80px]"
             fetchPriority="high"
-            src="/Abdelrahman-Rabi3.png"
+            src="/Abdelrahman-Rabi3.webp"
           />
           <img
             alt="Noranda Brown waving"
             className="photo-hover h-[200%] w-full object-cover object-[center_-40px] sm:object-[center_-60px] md:object-[center_-80px]"
-            src="/Abdelrahman-Rabi3-wave.png"
+            src="/Abdelrahman-Rabi3-wave.webp"
           />
         </div>
       </div>
